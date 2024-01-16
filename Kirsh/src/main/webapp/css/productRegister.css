@@ -1,0 +1,127 @@
+
+#addProduct-inner{
+    margin: 180px 0 100px 0;
+}
+
+.addProduct-title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.addProduct-area{
+    margin: auto;
+    padding: 0 200px;
+}
+.addProduct-area-inner{
+    border-top: 2px solid #333;
+    padding: 40px 0;
+}
+
+.productImage>span{
+    display: block;
+    margin-top: -25px;
+    color: #ee2525;
+    font-size: 14px;
+}
+
+.addProduct-right-contents
+{
+    width: 100%;
+}
+.btn-area{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.product-add-btn{
+    width: 120px;
+    height: 50px;
+    margin-top: 20px;
+    color: #fff;
+    border-radius: 7px;
+    font-family: 'SUITE', sans-serif;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #d32020;
+    display: block;
+    border: none;
+    outline: none;
+    float: right;
+}
+.register-product-contents-header{
+    font-weight: 700;
+    font-size: 16px;
+}
+.register-product-contents{
+    width: 80%;
+    margin: auto;
+}
+.register-product-contents-inner label{
+    width: 30%;
+    line-height: 50px;
+}
+.register-product-contents-inner input[type="text"], select{
+    width: 50%;
+    height: 50px;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+select{
+    width: 52%;
+}
+
+.register-product-contents-inner>div{
+    display: flex;
+    margin-top: 40px;
+}
+
+.addCategoryBtn{
+    display: block;
+    width: 10%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.upload-area{
+    width: 50%;
+}
+
+.upload-area>input{
+    margin-top: 20px;
+}
+
+#productInfo{
+    outline: none;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+.productOption{
+    display: flex;
+    gap: 3%;
+}
+
+.productOptionAdd{
+    width: 100px;
+    background-color: #457ccf;
+    border: 1px solid #457ccf;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    line-height: 50px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.deleteOption{
+    background-color: #d32020;
+    border: 1px solid #d32020;
+}

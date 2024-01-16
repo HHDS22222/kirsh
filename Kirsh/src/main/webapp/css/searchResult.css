@@ -1,0 +1,111 @@
+/* 肄섑뀗痢� 1 */
+
+.first-contents {
+    padding: 0 50px;
+}
+
+.first-contents .first-contents-info {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.first-contents-thumb {
+    width: 23%;
+    margin-bottom: 120px;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.first-contents-thumb .thumb-img {
+    width: 100%;
+}
+
+.thumb-img img{
+    display: block;
+    width: 100%;
+}
+
+.thumb-info p{
+    margin-top: 10px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.searchResult-input-area{
+	display:flex;
+    padding: 20px 0 100px !important;
+    justify-content: center;
+}
+
+.searchResult-input{
+    width: 30% !important;
+    margin-right: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+}
+
+.searchResult-input:focus{
+	outline : none;
+}
+
+.searchResult-input-btn {
+	background-image: url(../images/common/search-btn.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 20px;
+	background-color: inherit;
+	border: none;
+	background-position: center;
+	cursor: pointer;
+}
+
+.result-comments-area{
+    padding: 0 50px;
+}
+
+.result-comments{
+    margin-bottom: 20px;
+}
+
+.item-list{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.item{
+    width: 23%;
+    margin-right: 2%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.item-thumb{
+    cursor: pointer;
+}
+
+.item-name {
+	font-size: 18px;
+	cursor: pointer;
+	margin-top:15px;
+}
+
+.item-price {
+	margin-top: 10px;
+	font-size: 16px;
+	color: #666;
+}
+
+.item-thumb img{
+    max-width: 100%;
+    height: 100%;
+    display: block;
+}
+

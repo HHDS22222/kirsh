@@ -1,0 +1,117 @@
+.main-banner img {
+	display: block;
+	width: 100%;
+}
+
+.first-contents-title {
+	display: flex;
+	justify-content: space-between;
+}
+
+.first-contents-title h1 {
+	margin-top: 0;
+}
+
+/* �젙�젹 */
+.sortList {
+	position: relative;
+	text-align: right;
+}
+
+.dropDownBtn {
+	padding: 10px 30px;
+	width: 160px;
+	cursor: pointer;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.dropDownBtn::after {
+	content: url(../images/common/down-btn.png);
+	position: absolute;
+	top: 11px;
+	right: 5px;
+	width: 15px;
+	height: 15px;
+}
+
+.dropDown {
+	position: absolute;
+	width: 100%;
+	background-color: #fff;
+	padding: 10px 0;
+	border-radius: 5px;
+	border: 2px solid #eee;
+	display: none;
+}
+
+.dropDown div {
+	height: 35px;
+	line-height: 35px;
+	cursor: pointer;
+	padding: 0 15px;
+}
+
+.dropDown div:hover {
+	font-weight: 700;
+}
+
+/* �븘�씠�뀥 由ъ뒪�듃 */
+.item-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item {
+	width: 23%;
+	text-align: center;
+	margin-bottom: 50px;
+	margin-right: 2%;
+}
+
+.item-thumb {
+	cursor: pointer;
+	
+}
+.item-thumb>img{
+	width:100%;
+	height:100%;
+}
+.item-name {
+	font-size: 18px;
+	cursor: pointer;
+	margin-top:15px;
+}
+
+.item-price {
+	margin-top: 10px;
+	font-size: 16px;
+	color: #666;
+}
+
+.item-thumb img {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.addProduct-btn-area {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.addProduct-btn {
+	background-color: #000;
+	color: #fff;
+	display: block;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 50px 100px 0 0;
+}
+
+.addProduct-btn:hover {
+	background-color: rgb(226, 27, 27);
+}

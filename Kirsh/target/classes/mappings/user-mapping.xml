@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserDAO">
+	<select id="getUser" parameterType="user" resultType="user">
+		select * from user where userID = #{userID} and userPW = #{userPW} 
+	</select>
+	<select id="getUserInfo" resultType="user">
+		select * from user where userID = #{userID}
+	</select>
+	<select id="getUserList" resultType="user">
+		select * from user
+		where userName LIKE CONCAT('%', #{searchName}, '%')
+		AND email LIKE CONCAT('%', #{searchEmail}, '%')
+		ORDER BY joinDay DESC
+	</select>
+	<insert id="insertUser">
+		INSERT INTO user(userID, userPW, userName, userNickname, email, postcode, roadAddress, jibunAddress, detailAddress, extraAddress, birth, mobile)
+		VALUES(#{userID},#{userPW},#{userName},#{userNickname},#{email}, #{postcode}, #{roadAddress}, #{jibunAddress}, #{detailAddress}, #{extraAddress}, #{birth}, #{mobile})
+	</insert>
+	<delete id="deleteUser">
+		DELETE FROM user WHERE
+		userID = #{userID}
+	</delete>
+
+</mapper>	

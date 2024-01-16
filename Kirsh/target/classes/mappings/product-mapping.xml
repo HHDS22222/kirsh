@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductDAO">
+
+	<select id="getProduct" resultType="product">
+		SELECT * FROM
+		product
+		WHERE
+		productCode = #{productCode};
+
+
+	</select>
+	<select id="getProductOption" resultType="product">
+		select productInvntCnt,
+		productSize from productOption where productModel = #{productModel}
+	</select>
+
+	<select id="getProductSize" resultType="product">
+		select * from
+		productOption where productModel = #{productModel};
+
+	</select>
+
+	<select id="getProductList" resultType="product">
+		SELECT * FROM product
+		order by productCode DESC;
+	</select>
+
+	<select id="getProductItemList" resultType="product">
+		SELECT * FROM product
+		INNER JOIN category ON product.productCategoryNum
+		=
+		category.productCategoryNum
+		WHERE productName LIKE CONCAT('%',
+		#{searchName}, '%')
+		AND productCode LIKE CONCAT('%', #{searchCode},
+		'%')
+		<!-- AND product.productCategoryNum LIKE CONCAT('%', #{productCategoryNum}, 
+			'%') -->
+		<if test="productCategoryNum != 0">
+			AND product.productCategoryNum = #{productCategoryNum}
+		</if>
+		ORDER BY productCode DESC;
+	</select>
+	<select id="searchProduct" resultType="product">
+		select * from product
+		where productName LIKE CONCAT('%',
+		#{searchName}, '%');
+	</select>
+	<select id="searchCount" resultType="product">
+		select count(*) as searchCnt from product
+		where productName LIKE CONCAT('%',
+		#{searchName}, '%');
+	</select>
+
+	<!-- <select id="getProductItemList" resultType="product"> SELECT * FROM 
+		product inner join category on productCategoryNum = productCategoryNum WHERE 
+		productName LIKE CONCAT('%', #{searchName}, '%') AND productCode LIKE CONCAT('%', 
+		#{searchCode}, '%') AND productCategoryNum LIKE CONCAT('%', #{productCategoryNum} 
+		, '%') ORDER BY productCode DESC; </select> -->
+
+	<select id="getSize" resultType="java.lang.String">
+		select productSize from
+		productOption where productModel = #{productModel};
+	</select>
+
+	<!-- <resultMap type="#modelname" id="YourResultSet"> <id property="param1" 
+		column="columnname1" /> <result property="param2" column="columnname2" /> 
+		<result property="param3" column="columnname3" /> </resultMap> -->
+
+	<insert id="insertProduct">
+		INSERT INTO product(productCategoryNum, productName,
+		productEngName,
+		productModel, productRPrice, productPrice,
+		productInfo,
+		productImageUrl1, productImageUrl2)
+		VALUES(#{productCategoryNum},
+		#{productName},#{productEngName},
+		#{productModel}, #{productRPrice},
+		#{productPrice}, #{productInfo},
+		#{productImageUrl1},
+		#{productImageUrl2});
+		<foreach collection="productSize" item="size" index="index"
+			separator=";">
+			INSERT INTO productOption(productSize, productInvntCnt,
+			productModel)
+			VALUES(#{size}, ${productInvntCnt[index]},
+			#{productModel})
+		</foreach>
+	</insert>
+
+	<resultMap type="com.kirsh.www.biz.product.ProductVO"
+		id="ProductCategory">
+		<collection property="product" resultMap="productMap" />
+		<collection property="category" resultMap="categoryMap" />
+	</resultMap>
+
+	<update id="updateProduct">
+		UPDATE product
+		SET
+		productName=#{productName},
+		productEngName=#{productEngName},
+		productModel=#{productModel},
+		productRPrice=#{productRPrice},
+		productPrice=#{productPrice},
+		productImage1=#{productImage1},
+		productImage2=#{productImage2},
+		productImage3=#{productImage3},
+		productImage4=#{productImage4},
+		productImage5=#{productImage5},
+		productInfo=#{productInfo}
+		WHERE
+		productCode = #{productCode}
+	</update>
+
+	<delete id="deleteProduct">
+		DELETE FROM product WHERE
+		productCode = #{productCode}
+	</delete>
+
+</mapper>

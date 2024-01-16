@@ -1,0 +1,175 @@
+
+#addProduct-inner{
+    margin: 180px 0 100px 0;
+}
+
+.addProduct-title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.addProduct-area{
+    margin: auto;
+    padding: 0 200px;
+}
+.addProduct-area-inner{
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #333;
+    padding: 40px 0;
+}
+.addProduct-top{
+    border-top: 3px solid #000;
+}
+
+.right-path{
+    text-align: right;
+    padding: 0 200px;
+    margin-bottom: 20px;
+    color: #666;
+}
+.addProduct-left-menu{
+    width: 23%;
+}
+
+.categoryClick{
+    font-size: 16px;
+    line-height: 45px;
+    color: #999;
+}
+.categoryClick:hover{
+    color: #000;
+}
+
+.clicked{
+	color:#000;
+}
+
+.addProduct-right-contents
+{
+    width: 90%;
+}
+
+.product-search-area{
+    width: 100%;
+    border: 1px solid #999;
+    padding: 2% 4%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.product-search-area-inner{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.product-search-area-inner>label{
+    line-height: 50px;
+}
+
+.product-search-area-inner>input[type=text]{
+    width: 30%;
+    outline: none;
+    padding: 0 10px;
+    margin: 0;
+    border-radius: 7px;
+    border: 1px solid #999;
+}
+
+.search-btn{
+    width: 100px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-family: 'SUITE', sans-serif;
+    font-size: 14px;
+}
+
+.product-list-area{
+    margin-top: 35px;
+}
+.product-header-area{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 35px 20px 20px;
+    border: 1px solid #999;
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    text-align: center;
+}
+.product-item>div, .product-item>div{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+}
+.product-item{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.product-list-contents{
+    height: 600px;
+    overflow: scroll;
+    border: 1px solid #999;
+    overflow-x: hidden;
+}
+
+
+.checkbox-area{
+    width: 5%;
+}
+
+.product-code{
+    width: 10%;
+}
+.product-category{
+    width: 15%;
+}
+.product-name{
+    width: 25%;
+}
+.product-name>a:hover{
+	color: #d32020;
+}
+.product-modelName{
+    width: 20%;
+}
+.product-RPrice{
+    width: 15%;
+}
+.product-price{
+    width: 10%;
+}
+
+.contents-title{
+    font-weight: 700;
+}
+
+.btn-area{
+    display: flex;
+    justify-content: end;
+    gap: 1%;
+}
+.product-delete-btn, .product-add-btn{
+    width: 120px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 7px;
+    font-family: 'SUITE', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product-add-btn{
+    line-height: 50px;
+    text-align: center;
+    background-color: #d32020;
+}

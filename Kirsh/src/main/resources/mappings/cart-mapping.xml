@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CartDAO">
+	<select id="getCartList" resultType="cart">
+		SELECT DISTINCT cart.userID,
+		cart.productCode, cart.productName, sum(cart.productPrice) OVER (PARTITION BY
+		cart.productCode, cart.productSize) AS productPrice,
+		SUM(cart.productCnt) OVER (PARTITION BY cart.productCode,
+		cart.productSize) AS productCnt, cart.productSize,
+		product.productImageUrl2, product.productModel
+		FROM cart
+		INNER JOIN product ON cart.productCode = product.productCode AND
+		cart.productSize = cart.productSize
+		WHERE cart.userID = #{userID};
+		<!-- SELECT cartNum, cart.userID, cart.productCode, cart.productName, cart.productPrice, 
+			cart.productCnt, cart.productSize, product.productImageUrl2, product.productModel 
+			FROM cart INNER JOIN product ON cart.productCode = product.productCode WHERE 
+			cart.userID = #{userID}; -->
+	</select>
+	<insert id="insertCart">
+		insert into cart(userID, productCode, productName,
+		productPrice, productCnt, productSize)
+		values(#{userID},
+		#{productCode}, #{productName}, #{productPrice}, #{productCnt},
+		#{productSize})
+	</insert>
+	<delete id="deleteCart">
+		DELETE FROM cart WHERE productCode = #{productCode} AND productSize = #{productSize} AND userID = #{userID};
+	</delete>
+</mapper>

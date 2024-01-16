@@ -1,0 +1,51 @@
+/* 콘텐츠 1 */
+
+.first-contents {
+    padding: 0 50px;
+}
+
+.first-contents .first-contents-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.first-contents-thumb {
+    width: 23%;
+    margin-bottom: 120px;
+    cursor: pointer;
+}
+
+.first-contents-thumb .thumb-img {
+    width: 100%;
+}
+
+.thumb-img img{
+    display: block;
+    width: 100%;
+}
+
+.thumb-info p{
+    margin-top: 10px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+/* pop-video */
+
+.video-contents-area{
+    border: 25px solid #fff;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 10001;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.video-contents-area .video iframe{
+    display: block;
+}
