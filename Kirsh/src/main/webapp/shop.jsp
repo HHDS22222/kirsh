@@ -44,7 +44,7 @@
 										<img src="${product.productImageUrl1}" alt="상품이미지1">
 									</div>
 									<div class="item-name">${product.productName}</div>
-									<div class="item-price">${product.productPrice}원</div>
+									<div class="item-price"><span>${product.productPrice}</span>원</div>
 								</a>
 							</div>
 						</c:forEach>

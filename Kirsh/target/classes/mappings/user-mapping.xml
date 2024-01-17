@@ -4,7 +4,7 @@
 
 <mapper namespace="UserDAO">
 	<select id="getUser" parameterType="user" resultType="user">
-		select * from user where userID = #{userID} and userPW = #{userPW} 
+		select authority, userID from user where userID = #{userID} and userPW = #{userPW} 
 	</select>
 	<select id="getUserInfo" resultType="user">
 		select * from user where userID = #{userID}
@@ -16,8 +16,8 @@
 		ORDER BY joinDay DESC
 	</select>
 	<insert id="insertUser">
-		INSERT INTO user(userID, userPW, userName, userNickname, email, postcode, roadAddress, jibunAddress, detailAddress, extraAddress, birth, mobile)
-		VALUES(#{userID},#{userPW},#{userName},#{userNickname},#{email}, #{postcode}, #{roadAddress}, #{jibunAddress}, #{detailAddress}, #{extraAddress}, #{birth}, #{mobile})
+		INSERT INTO user(userID, userPW, userName, userNickname, email, postcode, roadAddress, jibunAddress, detailAddress, extraAddress, birth, firstTel, secondTel, thirdTel)
+		VALUES(#{userID},#{userPW},#{userName},#{userNickname},#{email}, #{postcode}, #{roadAddress}, #{jibunAddress}, #{detailAddress}, #{extraAddress}, #{birth}, #{firstTel}, #{secondTel}, #{thirdTel})
 	</insert>
 	<delete id="deleteUser">
 		DELETE FROM user WHERE

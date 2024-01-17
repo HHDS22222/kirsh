@@ -53,13 +53,13 @@
 					<a href="index.jsp"><img src="images/common/logo.gif" alt="로고"></a>
 				</div>
 				<ul class="gnb-right">
-					<c:if test="${user.authority == 'admin'}">
+					<c:if test="${userAuthority == 'admin'}">
 						<li><a href="userList.do" class="userList">MANAGE</a></li>
 					</c:if>
 					<li><a href="#none" class="search">SEARCH</a></li>
 					<c:choose>
-						<c:when test="${user != null}">
-							<li><a href="mypage.jsp">MY PAGE</a></li>
+						<c:when test="${userID != null}">
+							<li><a href="mypage.do">MY PAGE</a></li>
 						</c:when>
 						<c:otherwise>
 							<li><a href="login.jsp">LOG IN</a></li>

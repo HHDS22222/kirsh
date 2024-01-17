@@ -59,11 +59,11 @@
                             <div class="tel-area">
                                 <label for="tel" class="required">연락처</label>
                                 <div class="tel-info">
-                                    <input type="text" class="tel first-tel" name="first_tel" maxlength="3" required>
+                                    <input type="text" class="tel first-tel" name="firstTel" maxlength="3" required>
                                     <p>-</p>
-                                    <input type="text" class="tel second-tel" name="second_tel" maxlength="4" required>
+                                    <input type="text" class="tel second-tel" name="secondTel" maxlength="4" required>
                                     <p>-</p>
-                                    <input type="text" class="tel third-tel" name="third_tel" maxlength="4" required>
+                                    <input type="text" class="tel third-tel" name="thirdTel" maxlength="4" required>
                                 </div>
                             </div>
                         </div>

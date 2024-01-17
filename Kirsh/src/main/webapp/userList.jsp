@@ -41,12 +41,12 @@
 										<div class="checkbox-area">
 											<input type="checkbox" onclick="selectAll(this)">
 										</div>
-										<div class="product-code contents-title">이메일</div>
-										<div class="product-category contents-title">성명</div>
-										<div class="product-name contents-title">닉네임</div>
-										<div class="product-modelName contents-title">권한</div>
-										<div class="product-RPridce contents-title">연락처</div>
-										<div class="product-price contents-title">가입일</div>
+										<div class="user-email contents-title">이메일</div>
+										<div class="user-name contents-title">성명</div>
+										<div class="user-nickname contents-title">닉네임</div>
+										<div class="user-authority contents-title">권한</div>
+										<div class="user-mobile contents-title">연락처</div>
+										<div class="user-Rdate contents-title">가입일</div>
 									</div>
 									<div class="product-list-contents">
 										<c:forEach items="${userList}" var="user">
@@ -55,15 +55,15 @@
 													<input type="checkbox" name="user-check"
 														value="${user.userID}">
 												</div>
-												<div class="email">${user.email}</div>
-												<div class="userName">${user.userName}</div>
-												<div class="userNickname">${user.userNickname}</div>
-												<div class="authority">
+												<div class="email user-email">${user.email}</div>
+												<div class="userName user-name">${user.userName}</div>
+												<div class="userNickname user-nickname">${user.userNickname}</div>
+												<div class="authority user-authority">
 													<c:if test="${user.authority == 'admin'}">관리자</c:if>
 													<c:if test="${user.authority == 'user'}">일반유저</c:if>
 												</div>
-												<div class="mobile">${user.mobile}</div>
-												<div class="joinDay">${user.joinDay}</div>
+												<div class="mobile user-mobile">${user.firstTel}-${user.secondTel}-${user.thirdTel}</div>
+												<div class="joinDay user-Rdate">${user.joinDay}</div>
 											</div>
 										</c:forEach>
 									</div>

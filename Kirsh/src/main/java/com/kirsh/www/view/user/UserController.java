@@ -23,15 +23,8 @@ public class UserController {
 
 	// 회원가입
 	@RequestMapping(value = "/register.do", method = RequestMethod.POST)
-	public String register(UserVO vo, @RequestParam("first_tel") String firstNumber,
-			@RequestParam("second_tel") String secondNumber, @RequestParam("third_tel") String thirdNumber) {
+	public String register(UserVO vo) {
 		System.out.println("회원가입 처리");
-		StringBuffer buffer = new StringBuffer();
-		buffer.append(firstNumber);
-		buffer.append(secondNumber);
-		buffer.append(thirdNumber);
-		vo.setMobile(buffer.toString());
-		System.out.println(vo.getMobile());
 		userService.insertUser(vo);
 		return "redirect:index.jsp";
 	}
@@ -42,7 +35,7 @@ public class UserController {
 		System.out.println("로그인 처리 실행");
 		UserVO user = userService.getUser(vo);
 		if (user != null) {
-			/* session.setAttribute("user", user); */
+			session.setAttribute("userAuthority", user.getAuthority());
 			session.setAttribute("userID", user.getUserID());
 			System.out.println("로그인 완료");
 			return "index.do";
@@ -52,10 +45,10 @@ public class UserController {
 			return "redirect:login.jsp";
 		}
 	}
-	
+
 	@RequestMapping(value = "/index.do")
 	public String showIndex() {
-		
+
 		return "redirect:index.jsp";
 	}
 
@@ -84,5 +77,13 @@ public class UserController {
 			userService.deleteUser(user);
 		}
 		return "userList.do";
+	}
+
+	@RequestMapping(value = "/mypage.do")
+	public String myPage(UserVO vo, HttpSession session, Model model) {
+		String userID = session.getAttribute("userID").toString();
+		UserVO user = userService.getUserInfo(userID);
+		model.addAttribute("user", user);
+		return "mypage.jsp";
 	}
 }

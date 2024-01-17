@@ -15,7 +15,9 @@ public class UserVO {
 	private String detailAddress;
 	private String extraAddress;
 	private String birth;
-	private String mobile;
+	private String firstTel;
+	private String secondTel;
+	private String thirdTel;
 	private String authority;
 	private int point;
 	private Date joinDay;
@@ -107,11 +109,24 @@ public class UserVO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getMobile() {
-		return mobile;
+
+	public String getFirstTel() {
+		return firstTel;
 	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
+	public void setFirstTel(String firstTel) {
+		this.firstTel = firstTel;
+	}
+	public String getSecondTel() {
+		return secondTel;
+	}
+	public void setSecondTel(String secondTel) {
+		this.secondTel = secondTel;
+	}
+	public String getThirdTel() {
+		return thirdTel;
+	}
+	public void setThirdTel(String thirdTel) {
+		this.thirdTel = thirdTel;
 	}
 	public int getPoint() {
 		return point;
