@@ -131,4 +131,5 @@ public class ProductController {
 		model.addAttribute("searchCount", searchCount.getSearchCnt());
 		return "searchResult.jsp";
 	}
+
 }

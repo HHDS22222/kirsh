@@ -49,7 +49,7 @@
 							</div>
 						</c:forEach>
 					</div>
-					<c:if test="${user.authority == 'admin'}">
+					<c:if test="${userAuthority == 'admin'}">
 						<div class="addProduct-btn-area">
 							<a href="getProductItemList.do" class="addProduct-btn">상품 등록</a>
 						</div>
