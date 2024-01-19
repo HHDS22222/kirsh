@@ -12,7 +12,7 @@ public class CartServiceImpl implements CartService {
 
 	@Autowired
 	private CartDAO cartDAO;
-	
+
 	@Override
 	public List<CartVO> getCartList(CartVO vo) {
 		return cartDAO.getCartList(vo);
@@ -27,6 +27,11 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public void deleteCart(CartVO vo) {
 		cartDAO.deleteCart(vo);
+	}
+
+	@Override
+	public void deleteAllCart(CartVO vo) {
+		cartDAO.deleteAllCart(vo);
 	}
 
 }

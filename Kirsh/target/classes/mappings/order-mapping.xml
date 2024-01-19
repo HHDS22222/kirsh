@@ -3,25 +3,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="OrderDAO">
-	<select id="getUser" parameterType="user" resultType="user">
-		select authority, userID from user where userID = #{userID} and userPW = #{userPW} 
-	</select>
-	<select id="getUserInfo" resultType="user">
-		select * from user where userID = #{userID}
-	</select>
-	<select id="getUserList" resultType="user">
-		select * from user
-		where userName LIKE CONCAT('%', #{searchName}, '%')
-		AND email LIKE CONCAT('%', #{searchEmail}, '%')
-		ORDER BY joinDay DESC
-	</select>
-	<insert id="insertUser">
-		INSERT INTO user(userID, userPW, userName, userNickname, email, postcode, roadAddress, jibunAddress, detailAddress, extraAddress, birth, firstTel, secondTel, thirdTel)
-		VALUES(#{userID},#{userPW},#{userName},#{userNickname},#{email}, #{postcode}, #{roadAddress}, #{jibunAddress}, #{detailAddress}, #{extraAddress}, #{birth}, #{firstTel}, #{secondTel}, #{thirdTel})
-	</insert>
-	<delete id="deleteUser">
-		DELETE FROM user WHERE
-		userID = #{userID}
-	</delete>
+	<insert id="addOrder">
+	
+		<selectKey resultType="int" keyProperty="orderNum"
+			order="AFTER">SELECT LAST_INSERT_ID();
+		</selectKey>
 
-</mapper>	
+		insert into kirsh.order(userID, productPrice, shipPostCode,
+		shipAddress, shipDetailAddress, shipExtraAddress, payee, shipFirstTel,
+		shipSecondTel, shipThirdTel, shipRoadAddress, shipEmail,
+		shipOrderRequest, payments)
+		values(#{userID}, #{productPrice},
+		#{shipPostCode},
+		#{shipAddress}, #{shipDetailAddress},
+		#{shipExtraAddress}, #{payee},
+		#{shipFirstTel}, #{shipSecondTel},
+		#{shipThirdTel}, #{shipRoadAddress},
+		#{shipEmail}, #{shipOrderRequest}, #{payments})
+	</insert>
+	<select id="getOrderList" resultType="order">
+		select * from kirsh.order where userID = #{userID} order by buyDate DESC;
+	</select>
+	<select id="getOrder" resultType="order">
+		SELECT * FROM kirsh.order where
+		orderNum = #{orderNum};
+	</select>
+</mapper>

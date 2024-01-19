@@ -27,7 +27,7 @@
 					<div class="mypage-area-inner">
 						<div class="mypage-left-menu">
 							<ul>
-								<li><a href="#none">주문내역조회</a></li>
+								<li><a href="getOrderList.do">주문내역조회</a></li>
 								<li><a href="#none">쿠폰</a></li>
 								<li><a href="#none">1:1문의 내역</a></li>
 								<li><a href="#none">회원정보수정</a></li>

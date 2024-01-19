@@ -10,6 +10,7 @@
 		<typeAlias type="com.kirsh.www.biz.category.CategoryVO" alias="category"/>
 		<typeAlias type="com.kirsh.www.biz.cart.CartVO" alias="cart"/>
 		<typeAlias type="com.kirsh.www.biz.order.OrderVO" alias="order"/>
+		<typeAlias type="com.kirsh.www.biz.orderDetail.OrderDetailVO" alias="orderDetail"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappings/user-mapping.xml" />
@@ -17,5 +18,6 @@
 		<mapper resource="mappings/category-mapping.xml" />
 		<mapper resource="mappings/cart-mapping.xml"/>
 		<mapper resource="mappings/order-mapping.xml"/>
+		<mapper resource="mappings/orderDetail-mapping.xml"/>
 	</mappers>
 </configuration>

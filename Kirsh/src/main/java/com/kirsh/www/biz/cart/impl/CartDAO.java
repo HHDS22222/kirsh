@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kirsh.www.biz.cart.CartVO;
+import com.kirsh.www.biz.order.OrderVO;
 
 @Repository
 public class CartDAO {
@@ -24,5 +25,9 @@ public class CartDAO {
 	
 	public void deleteCart(CartVO vo) {
 		mybatis.delete("CartDAO.deleteCart", vo);
+	}
+	
+	public void deleteAllCart(CartVO vo) {
+		mybatis.delete("CartDAO.deleteAllCart", vo);
 	}
 }

@@ -42,12 +42,31 @@
 												</div>
 												<div class="product-info-name-size-area">
 													<p class="product-info-name">${cart.productName}</p>
-													<p class="product-info-size">사이즈 <strong>${cart.productSize}</strong></p>
+													<p class="product-info-size">
+														사이즈 <strong>${cart.productSize}</strong>
+													</p>
 												</div>
 											</div>
-											<div class="product-info-cnt"><strong>${cart.productCnt}</strong>개</div>
-											<div class="product-info-price"><strong>${cart.productPrice}</strong>원</div>
+											<div class="product-info-cnt">
+												<strong>${cart.productCnt}</strong>개
+											</div>
+											<div class="product-info-price">
+												<strong>${cart.productPrice}</strong>원
+											</div>
 										</div>
+										<input type="hidden" name="productCode"
+											value="${cart.productCode}">
+										<input type="hidden" name="cartNum" value="${cart.cartNum}">
+										<input type="hidden" name="productName"
+											value="${cart.productName}">
+										<input type="hidden" name="productSize"
+											value="${cart.productSize}">
+										<input type="hidden" name="productCnt"
+											value="${cart.productCnt}">
+										<input type="hidden" name="productCntPrice"
+											value="${cart.productPrice}">
+										<input type="hidden" name="productImageUrl2"
+											value="${cart.productImageUrl2}">
 									</c:forEach>
 								</div>
 							</div>
@@ -57,23 +76,26 @@
 								<div class="orderer-info">
 									<div class="orderer-name-area">
 										<label for="orderer-name">이름</label> <input type="text"
-											name="orderer-name" value="${userInfo.userName}" readonly>
+											name="ordererName" value="${userInfo.userName}" readonly>
 									</div>
 									<div class="orderer-email-area">
 										<label for="orderer-email">이메일</label> <input type="email"
-											name="orderer-email" value="${userInfo.email}" readonly>
+											name="ordererEmail" value="${userInfo.email}" readonly>
 									</div>
 									<div class="orderer-tel-area">
 										<label for="orderer-tel" class="required">연락처</label>
 										<div class="tel-info">
 											<input type="text" class="tel first-tel"
-												name="orderer-first-tel" maxlength="3" value="${userInfo.firstTel}" readonly required>
+												name="ordererFirstTel" maxlength="3"
+												value="${userInfo.firstTel}" readonly required>
 											<p>-</p>
 											<input type="text" class="tel second-tel"
-												name="orderer-second-tel" maxlength="4" value="${userInfo.secondTel}" readonly required>
+												name="ordererSecondTel" maxlength="4"
+												value="${userInfo.secondTel}" readonly required>
 											<p>-</p>
 											<input type="text" class="tel third-tel"
-												name="orderer-third-tel" maxlength="4" value="${userInfo.thirdTel}" readonly required>
+												name="ordererThirdTel" maxlength="4"
+												value="${userInfo.thirdTel}" readonly required>
 										</div>
 									</div>
 									<div class="orderer-address-area">
@@ -84,16 +106,22 @@
 													<input type="button" onclick="sample4_execDaumPostcode()"
 														value="우편번호 찾기"> <input type="text"
 														id="sample4_postcode" placeholder="우편번호"
-														name="ordererPostcode" value="${userInfo.postcode}" readonly> <input
-														type="text" id="sample4_roadAddress" placeholder="도로명주소"
-														name="ordererRoadAddress" value="${userInfo.roadAddress}" readonly> <input
-														type="text" id="sample4_jibunAddress" placeholder="지번주소"
-														name="ordererJibunAddress" value="${userInfo.jibunAddress}" readonly> <span
+														name="ordererPostcode" value="${userInfo.postcode}"
+														readonly> <input type="text"
+														id="sample4_roadAddress" placeholder="도로명주소"
+														name="ordererRoadAddress" value="${userInfo.roadAddress}"
+														readonly> <input type="text"
+														id="sample4_jibunAddress" placeholder="지번주소"
+														name="ordererJibunAddress"
+														value="${userInfo.jibunAddress}" readonly> <span
 														id="guide" style="color: #999; display: none"></span> <input
 														type="text" id="sample4_detailAddress"
-														placeholder="상세주소를 입력해주세요." value="${userInfo.detailAddress}" name="ordererDetailAddress" readonly>
-													<input type="text" id="sample4_extraAddress"
-														placeholder="참고항목" name="ordererExtraAddress" value="${userInfo.extraAddress}" readonly>
+														placeholder="상세주소를 입력해주세요."
+														value="${userInfo.detailAddress}"
+														name="ordererDetailAddress" readonly> <input
+														type="text" id="sample4_extraAddress" placeholder="참고항목"
+														name="ordererExtraAddress"
+														value="${userInfo.extraAddress}" readonly>
 												</div>
 											</div>
 										</div>
@@ -107,23 +135,23 @@
 									받는 이가 동일합니다.
 									<div class="shipping-name-area">
 										<label for="shipping-name">받는 분</label> <input type="text"
-											name="shipping-name">
+											name="payee">
 									</div>
 									<div class="shipping-email-area">
 										<label for="shipping-email">이메일</label> <input type="email"
-											name="shipping-email">
+											name="shipEmail">
 									</div>
 									<div class="shipping-mobile-area">
 										<label for="shipping-mobile" class="required">연락처</label>
 										<div class="tel-info">
-											<input type="text" class="tel first-tel"
-												name="shipping-first-tel" maxlength="3" required>
+											<input type="text" class="tel first-tel" name="shipFirstTel"
+												maxlength="3" required>
 											<p>-</p>
 											<input type="text" class="tel second-tel"
-												name="shipping-second-tel" maxlength="4" required>
+												name="shipSecondTel" maxlength="4" required>
 											<p>-</p>
-											<input type="text" class="tel third-tel"
-												name="shipping-third-tel" maxlength="4" required>
+											<input type="text" class="tel third-tel" name="shipThirdTel"
+												maxlength="4" required>
 										</div>
 									</div>
 
@@ -135,11 +163,11 @@
 													<input type="button" onclick="sample4_execDaumPostcode()"
 														value="우편번호 찾기"> <input type="text"
 														id="sample4_postcode" placeholder="우편번호"
-														name="shipPostcode" readonly> <input type="text"
+														name="shipPostCode" readonly> <input type="text"
 														id="sample4_roadAddress" placeholder="도로명주소"
 														name="shipRoadAddress" readonly> <input
 														type="text" id="sample4_jibunAddress" placeholder="지번주소"
-														name="shipJibunAddress" readonly> <span id="guide"
+														name="shipAddress" readonly> <span id="guide"
 														style="color: #999; display: none"></span> <input
 														type="text" id="sample4_detailAddress"
 														placeholder="상세주소를 입력해주세요." name="shipDetailAddress">
@@ -150,8 +178,8 @@
 										</div>
 									</div>
 									<div class="shipping-order-request-area">
-										<label for="shipping-order-request">배송 시 요청사항</label> <select
-											name="shipping-order-request">
+										<label for="shipOrderRequest">배송 시 요청사항</label> <select
+											name="shipOrderRequest">
 											<option value="빠른 배송 부탁드립니다." selected>빠른 배송 부탁드립니다.</option>
 											<option value="배송 전, 연락주세요.">배송 전, 연락주세요.</option>
 											<option value="부재 시, 휴대폰으로 연락주세요.">부재 시, 휴대폰으로
@@ -167,9 +195,18 @@
 							<div class="payment-method-area">
 								<h3 class="order-result-title">주문 방법</h3>
 								<div class="payment-method">
-									<div class="payments-creditCard paymentsOn">신용카드</div>
-									<div class="payments-virtualAcount">가상계좌</div>
-									<div class="payments-acount-transfer">계좌이체</div>
+									<div>
+										<input type="radio" name="payments"
+											class="payments-creditCard paymentsOn" value="신용카드" checked><span>신용카드</span>
+									</div>
+									<div>
+										<input type="radio" name="payments"
+											class="payments-creditCard" value="가상계좌"><span>가상계좌</span>
+									</div>
+									<div>
+										<input type="radio" name="payments"
+											class="payments-creditCard" value="계좌이체"><span>계좌이체</span>
+									</div>
 								</div>
 							</div>
 							<div class="order-result-area">

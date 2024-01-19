@@ -1,0 +1,98 @@
+.mypage-right-contents {
+	border: 1px solid #333;
+	padding: 0;
+}
+
+.mypage-order-list-title {
+	display: flex;
+	text-align: center;
+	font-weight: 700;
+	border-bottom: 1px solid #333;
+	background-color: #ccc;
+	padding: 15px 0;
+}
+
+.order-info-title {
+	display: flex;
+	width: 70%;
+}
+
+.orderNum {
+	width: 10%;
+}
+
+.orderName {
+	width: 40%;
+}
+
+.orderInfo {
+	display: flex;
+	align-items: center;
+}
+
+.orderPay {
+	width: 30%;
+}
+
+.resultPrice {
+	width: 30%;
+}
+
+.orderDate {
+	width: 30%;
+}
+
+.order-info-list {
+	padding: 5px 0;
+	text-align: center;
+	width: 70%;
+}
+
+.orderImg>img {
+	width: 80px;
+}
+
+.resultPriceArea {
+	text-align: center;
+	padding: 10px 0 30px;
+	font-size: 22px;
+}
+
+.resultPriceArea>span {
+	font-weight: 800;
+}
+
+.order-item {
+	border-bottom: 1px solid #ccc;
+	margin-top:20px;
+}
+
+.order-item-info {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.order-info {
+	display: flex;
+	align-items: center;
+}
+
+.orderInfoBtn {
+	display: block;
+	background-color: #000;
+	color: #fff;
+	width: 30%;
+	margin: auto;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+.orderInfoBtn:hover {
+	background-color: #d32020;
+}
+
+.orderProductName{
+	margin:auto;
+}

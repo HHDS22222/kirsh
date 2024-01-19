@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="OrderDetailDAO">
+	<select id="getOrderDetail" resultType="orderDetail">
+		select * from orderDetail where orderNum = #{orderNum}
+	</select>
+	<insert id="insertOrderDetail">
+		insert into orderDetail(orderNum, productCode, productSize, productCnt, productCntPrice, productName, productImageUrl2) 
+		values(#{orderNum}, #{productCode}, #{productSize}, #{productCnt}, #{productCntPrice}, #{productName}, #{productImageUrl2})
+	</insert>
+</mapper>
