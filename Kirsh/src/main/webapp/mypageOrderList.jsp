@@ -69,7 +69,7 @@
 												</c:forEach>
 											</div>
 											<div class="orderDate">
-												<span>${order.buyDate}</span> <a href="getOrderInfo.do"
+												<span>${order.buyDate}</span> <a href="getOrderInfo.do?orderNum=${order.orderNum}"
 													class="orderInfoBtn">상세보기</a>
 											</div>
 										</div>

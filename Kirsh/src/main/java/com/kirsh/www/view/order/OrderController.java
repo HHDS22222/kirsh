@@ -87,4 +87,9 @@ public class OrderController {
 		}
 		return "mypageOrderList.jsp";
 	}
+	
+	@RequestMapping(value="/getOrderInfo.do")
+	public String getOrderInfo() {
+		return "";
+	}
 }
