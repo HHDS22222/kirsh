@@ -25,5 +25,10 @@ public class OrderDAO {
 	public OrderVO getOrder(OrderVO vo) {
 		return mybatis.selectOne("OrderDAO.getOrder", vo);
 	}
+
+	public List<OrderVO> getOrderAllList(OrderVO vo) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("OrderDAO.getOrderAllList", vo);
+	}
 	
 }

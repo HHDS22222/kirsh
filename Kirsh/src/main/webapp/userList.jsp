@@ -11,16 +11,29 @@
 <link
 	href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/static/woff2/SUITE.css"
 	rel="stylesheet">
+<link rel="stylesheet" href="css/management.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/userList.css">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
 	<div id="wrap">
-		<%@ include file="header.jsp"%>
+		<div class="management-title">
+			<div class="title-mode">包府磊 葛靛</div>
+			<div class="title-name">Kirsh</div>
+		</div>
+		<div class="userList-contents">
+		<div class="left-list-area">
+			<ul>
+				<li><a href="userList.do" class="active">蜡历 格废</a></li>
+				<li><a href="getProductItemList.do">惑前 包府</a></li>
+				<li><a href="getOrderAllList.do">林巩 包府</a></li>
+			</ul>
+			<a href="index.jsp" class="outManage">唱啊扁</a>
+		</div>
 		<section id="addProduct-inner">
 			<div class="inner">
-				<h1 class="addProduct-title">蜡历 格废</h1>
 				<div class="addProduct-area">
 					<div class="addProduct-area-inner">
 						<div class="addProduct-right-contents">
@@ -78,12 +91,22 @@
 				</div>
 			</div>
 		</section>
-		<%@ include file="footer.jsp"%>
+		</div>
+		
 	</div>
-	<div class="gnbbg"></div>
-	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="scripts/common.js"></script>
-	<script src="scripts/addProduct.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

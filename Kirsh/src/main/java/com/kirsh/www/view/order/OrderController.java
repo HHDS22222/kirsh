@@ -17,6 +17,7 @@ import com.kirsh.www.biz.order.OrderVO;
 import com.kirsh.www.biz.order.impl.OrderService;
 import com.kirsh.www.biz.orderDetail.OrderDetailVO;
 import com.kirsh.www.biz.orderDetail.impl.OrderDetailService;
+import com.kirsh.www.biz.product.ProductVO;
 
 @Controller
 public class OrderController {
@@ -68,12 +69,10 @@ public class OrderController {
 		return "index.jsp"; // 상품 구매 완료 페이지 추후 제작 예정
 	}
 	
-	public String getAllOrderList(OrderVO vo) {
-		return "";
-	}
-	
 	@RequestMapping(value="/getOrderList.do")
 	public String getOrderList(HttpSession session, Model model) {
+		
+		// 세션 ID값 가져오기
 		String userID = (String)session.getAttribute("userID");
 		OrderVO vo = new OrderVO();
 		vo.setUserID(userID);
@@ -89,7 +88,26 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="/getOrderInfo.do")
-	public String getOrderInfo() {
-		return "";
+	public String getOrderInfo(@RequestParam(value="orderNum", required = false) int orderNum, Model model) {
+		OrderVO vo = new OrderVO();
+		OrderDetailVO orderDetail = new OrderDetailVO();
+		
+		vo.setOrderNum(orderNum);
+		orderDetail.setOrderNum(orderNum);
+		
+		OrderVO orderInfo = orderService.getOrder(vo);
+		
+		List<OrderDetailVO> ldvo = orderDetailService.getOrderDetail(orderDetail);
+		orderInfo.setOrderDetailVO(ldvo);
+		model.addAttribute("orderInfo", orderInfo);
+		return "getOrderInfo.jsp";
 	}
+	
+	@RequestMapping(value="/getOrderAllList.do")
+	public String getOrderAllList(OrderVO vo, Model model) {
+		List<OrderVO> list = orderService.getOrderAllList(vo);
+		model.addAttribute("orderAllList", list);
+		return "orderAllList.jsp";
+	}
+	
 }

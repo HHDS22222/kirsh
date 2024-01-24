@@ -221,6 +221,7 @@ select:focus {
 .result-btn-area {
 	display: flex;
 	margin: 10px 0 50px 0;
+	justify-content:center;
 }
 
 .result-btn-area>div {
@@ -257,4 +258,5 @@ select:focus {
 	text-align: center;
 	border: 1px solid #000;
 	border-radius: 100px;
+	margin:auto;
 }

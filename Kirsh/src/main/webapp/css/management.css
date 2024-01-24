@@ -1,0 +1,49 @@
+.left-list-area{
+    width: 20%;
+    background-color: #333;
+    height: 100%;
+    position:fixed;
+    top: 80px;
+}
+
+.left-list-area a{
+    color: #fff;
+    display: block;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+}
+
+.active{
+    background-color: #355de0;
+}
+
+.management-title{
+    display: flex;
+    background-color: #333;
+    height: 80px;
+    color: #fff;
+    line-height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.title-mode{
+    width: 20%;
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.title-name{
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.outManage{
+    bottom: 0;
+    width: 100%;
+}

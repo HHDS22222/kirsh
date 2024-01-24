@@ -1,7 +1,4 @@
 
-#addProduct-inner{
-    margin: 180px 0 100px 0;
-}
 
 .addProduct-title{
     text-align: center;
@@ -10,12 +7,16 @@
 
 .addProduct-area{
     margin: auto;
-    padding: 0 200px;
+}
+.addProduct-left-menu>ul{
+	display:flex;
+	gap:25px;
+    justify-content: center;
+    margin-bottom: 20px;
+	
 }
 .addProduct-area-inner{
     display: flex;
-    justify-content: space-between;
-    border-top: 2px solid #333;
     padding: 40px 0;
 }
 .addProduct-top{
@@ -29,7 +30,7 @@
     color: #666;
 }
 .addProduct-left-menu{
-    width: 23%;
+    width: 100%;
 }
 
 .categoryClick{
@@ -114,7 +115,7 @@
 }
 
 .product-list-contents{
-    height: 600px;
+    height: 350px;
     overflow: scroll;
     border: 1px solid #999;
     overflow-x: hidden;

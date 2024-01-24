@@ -8,4 +8,5 @@ public interface OrderService {
 	public void addOrder(OrderVO vo);
 	public List<OrderVO> getOrderList(OrderVO vo);
 	public OrderVO getOrder(OrderVO vo);
+	public List<OrderVO> getOrderAllList(OrderVO vo);
 }

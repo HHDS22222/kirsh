@@ -28,4 +28,8 @@
 		SELECT * FROM kirsh.order where
 		orderNum = #{orderNum};
 	</select>
+	
+	<select id="getOrderAllList" resultType="order">
+		select * from kirsh.order order by orderNum desc;
+	</select>
 </mapper>

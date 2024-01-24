@@ -81,6 +81,12 @@ public class CartController {
 	    return "redirect:"+ referer;
 	}
 	
+	@RequestMapping(value="/goPrev.do")
+	public String goPrev(HttpServletRequest request) {
+	    String referer = request.getHeader("Referer");
+	    return "redirect:"+ referer;
+	}
+	
 	@RequestMapping(value="/cartOrderInfo.do")
 	public String cartOrderInfo(CartVO vo, HttpSession session, Model model) {
 		String userID = (String) session.getAttribute("userID");

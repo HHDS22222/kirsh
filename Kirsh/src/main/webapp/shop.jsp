@@ -49,16 +49,13 @@
 							</div>
 						</c:forEach>
 					</div>
-					<c:if test="${userAuthority == 'admin'}">
-						<div class="addProduct-btn-area">
-							<a href="getProductItemList.do" class="addProduct-btn">상품 등록</a>
-						</div>
-					</c:if>
 				</div>
 			</section>
 			<section id="page-area">
 				<div class="paging">
-					<a href="#" class="onPage">1</a> <a href="#">2</a> <a href="#">3</a>
+					<a href="#" class="onPage">1</a> 
+					<a href="#">2</a> 
+					<a href="#">3</a>
 				</div>
 			</section>
 		</div>

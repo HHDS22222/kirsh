@@ -78,7 +78,9 @@
 										</div>
 									</div>
 								</c:forEach>
-
+								<c:if test="${empty orderList}">
+									<p>주문 내역이 없습니다.</p>
+								</c:if>
 							</div>
 						</div>
 					</div>

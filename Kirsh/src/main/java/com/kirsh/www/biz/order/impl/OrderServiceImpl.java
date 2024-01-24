@@ -29,4 +29,10 @@ public class OrderServiceImpl implements OrderService{
 		return orderDAO.getOrder(vo);
 	}
 
+	@Override
+	public List<OrderVO> getOrderAllList(OrderVO vo) {
+		// TODO Auto-generated method stub
+		return orderDAO.getOrderAllList(vo);
+	}
+
 }

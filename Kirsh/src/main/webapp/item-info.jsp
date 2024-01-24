@@ -73,9 +73,9 @@ svg {
 		<section id="detail-page">
 			<div class="inner">
 				<div class="detail">
-					<img src="images/store-detail/detail-01.jpg" alt="상세페이지01"> <img
+<!-- 					<img src="images/store-detail/detail-01.jpg" alt="상세페이지01"> <img
 						src="images/store-detail/detail-02.jpg" alt="상세페이지02"> <img
-						src="images/store-detail/detail-03.jpg" alt="상세페이지03">
+						src="images/store-detail/detail-03.jpg" alt="상세페이지03"> -->
 				</div>
 			</div>
 		</section>
