@@ -25,7 +25,7 @@
 			<section id="first-contents-area">
 				<div class="inner">
 					<div class="first-contents-title">
-						<h1>OUTER</h1>
+						<h1>${categoryName}</h1>
 						<div class="sortList">
 							<p class="dropDownBtn">정렬 기준</p>
 							<div class="dropDown">

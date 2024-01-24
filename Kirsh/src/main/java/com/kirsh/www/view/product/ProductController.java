@@ -99,9 +99,11 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/getProductList.do")
-	public String getProductList(ProductVO vo, Model model) {
+	public String getProductList(ProductVO vo, Model model, @RequestParam(value="productCategoryName")String categoryName) {
 		List<ProductVO> productList = productService.getProductList(vo);
+		String category = categoryName.replace(" ", " & ");
 		model.addAttribute("productList", productList);
+		model.addAttribute("categoryName", category);
 		return "shop.jsp";
 	}
 	

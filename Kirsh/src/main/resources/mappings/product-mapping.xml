@@ -25,7 +25,10 @@
 
 	<select id="getProductList" resultType="product">
 		SELECT * FROM product
-		order by productCode DESC;
+		<if test="productCategoryNum != 0">
+			WHERE productCategoryNum = #{productCategoryNum}
+		</if>
+		ORDER BY productCode DESC;
 	</select>
 
 	<select id="getProductItemList" resultType="product">
@@ -37,8 +40,6 @@
 		#{searchName}, '%')
 		AND productCode LIKE CONCAT('%', #{searchCode},
 		'%')
-		<!-- AND product.productCategoryNum LIKE CONCAT('%', #{productCategoryNum}, 
-			'%') -->
 		<if test="productCategoryNum != 0">
 			AND product.productCategoryNum = #{productCategoryNum}
 		</if>
@@ -50,25 +51,16 @@
 		#{searchName}, '%');
 	</select>
 	<select id="searchCount" resultType="product">
-		select count(*) as searchCnt from product
+		select count(*) as searchCnt
+		from product
 		where productName LIKE CONCAT('%',
 		#{searchName}, '%');
 	</select>
-
-	<!-- <select id="getProductItemList" resultType="product"> SELECT * FROM 
-		product inner join category on productCategoryNum = productCategoryNum WHERE 
-		productName LIKE CONCAT('%', #{searchName}, '%') AND productCode LIKE CONCAT('%', 
-		#{searchCode}, '%') AND productCategoryNum LIKE CONCAT('%', #{productCategoryNum} 
-		, '%') ORDER BY productCode DESC; </select> -->
 
 	<select id="getSize" resultType="java.lang.String">
 		select productSize from
 		productOption where productModel = #{productModel};
 	</select>
-
-	<!-- <resultMap type="#modelname" id="YourResultSet"> <id property="param1" 
-		column="columnname1" /> <result property="param2" column="columnname2" /> 
-		<result property="param3" column="columnname3" /> </resultMap> -->
 
 	<insert id="insertProduct">
 		INSERT INTO product(productCategoryNum, productName,

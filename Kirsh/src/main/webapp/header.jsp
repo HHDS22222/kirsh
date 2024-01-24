@@ -24,22 +24,22 @@
 						<div class="areaHide">
 							<div class="dep2-area">
 								<ul class="dep2">
-									<li><a href="getProductList.do">CLOTHING</a>
+									<li><a href="getProductList.do?productCategoryName=ALL&productCategoryNum=0">CLOTHING</a>
 										<ul class="dep3">
-											<li><a href="getProductList.do">OUTER</a></li>
-											<li><a href="getProductList.do">SWEATSHIRTS</a></li>
-											<li><a href="getProductList.do">HOODIE</a></li>
-											<li><a href="getProductList.do">KNITWEAR</a></li>
-											<li><a href="getProductList.do">T-SHIRTS</a></li>
-											<li><a href="getProductList.do">SHIRT &amp; BLOUSE</a></li>
-											<li><a href="getProductList.do">DRESS &amp; SKIRT</a></li>
-											<li><a href="getProductList.do">PANTS &amp; SHOES</a></li>
-											<li><a href="getProductList.do">SWIMWEAR</a></li>
+											<li><a href="getProductList.do?productCategoryName=OUTER&productCategoryNum=9">OUTER</a></li>
+											<li><a href="getProductList.do?productCategoryName=SWEATSHIRTS&productCategoryNum=1">SWEATSHIRTS</a></li>
+											<li><a href="getProductList.do?productCategoryName=HOODIE&productCategoryNum=2">HOODIE</a></li>
+											<li><a href="getProductList.do?productCategoryName=KNITWEAR&productCategoryNum=3">KNITWEAR</a></li>
+											<li><a href="getProductList.do?productCategoryName=T-SHIRTS&productCategoryNum=4">T-SHIRTS</a></li>
+											<li><a href="getProductList.do?productCategoryName=SHIRT BLOUSE&productCategoryNum=5">SHIRT &amp; BLOUSE</a></li>
+											<li><a href="getProductList.do?productCategoryName=DRESS SKIRT&productCategoryNum=6">DRESS &amp; SKIRT</a></li>
+											<li><a href="getProductList.do?productCategoryName=PANTS SHOES&productCategoryNum=7">PANTS &amp; SHOES</a></li>
+											<li><a href="getProductList.do?productCategoryName=SWIMWEAR&productCategoryNum=8">SWIMWEAR</a></li>
 										</ul></li>
-									<li><a href="getProductList.do">POCKET</a></li>
-									<li><a href="getProductList.do">SHOES</a></li>
-									<li><a href="getProductList.do">HEADWEAR</a></li>
-									<li><a href="getProductList.do">KIDS</a></li>
+									<li><a href="getProductList.do?productCategoryName=POCKET&productCategoryNum=10">POCKET</a></li>
+									<li><a href="getProductList.do?productCategoryName=SHOES&productCategoryNum=11">SHOES</a></li>
+									<li><a href="getProductList.do?productCategoryName=HEADWEAR&productCategoryNum=12">HEADWEAR</a></li>
+									<li><a href="getProductList.do?productCategoryName=KIDS&productCategoryNum=13">KIDS</a></li>
 								</ul>
 								<div class="gnbBg"></div>
 							</div>
