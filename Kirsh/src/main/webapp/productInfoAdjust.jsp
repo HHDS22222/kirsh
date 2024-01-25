@@ -41,26 +41,19 @@
 												name="productEngName" value="${product.productEngName}">
 										</div>
 										<div class="product-category-name">
-											<label for="productCategoryName">카테고리</label> 
-											<select name="productCategoryNum">
-													<c:forEach items="${categoryList}" var="category">
-														<c:if test="${category.productCategoryNum == product.productCategoryNum}">
-															<option value="${category.productCategoryNum}" selected>${category.productCategoryName}</option>
-														</c:if>
-														<c:if test="${category.productCategoryNum != product.productCategoryNum}">
-															<option value="${category.productCategoryNum}">${category.productCategoryName}</option>
-														</c:if>
-													</c:forEach>
-													<!-- 												<option value="1">SWEATSHIRTS</option>
-												<option value="2">HOODIE</option>
-												<option value="3">KNITWEAR</option>
-												<option value="4">T-SHIRTS</option>
-												<option value="5">SHIRT &amp; BLOUSE</option>
-												<option value="6">DRESS &amp; SKIRT</option>
-												<option value="7">PANTS &amp; SHOES</option>
-												<option value="8">SWIMWEAR</option> -->
-											</select>
-												<a href="addCategory.do" class="addCategoryBtn">카테고리 추가</a>
+											<label for="productCategoryName">카테고리</label> <select
+												name="productCategoryNum">
+												<c:forEach items="${categoryList}" var="category">
+													<c:if
+														test="${category.productCategoryNum == product.productCategoryNum}">
+														<option value="${category.productCategoryNum}" selected>${category.productCategoryName}</option>
+													</c:if>
+													<c:if
+														test="${category.productCategoryNum != product.productCategoryNum}">
+														<option value="${category.productCategoryNum}">${category.productCategoryName}</option>
+													</c:if>
+												</c:forEach>
+											</select> <a href="addCategory.do" class="addCategoryBtn">카테고리 추가</a>
 										</div>
 										<div class="product-RPrice-area">
 											<label for="productRPrice">상품 소비자 가격</label> <input
@@ -79,16 +72,21 @@
 										<div class="product-size-area">
 											<label for="productOption">옵션</label>
 											<div class="productOptionList">
-												<c:forEach items="${options}" var="option">
+												<c:forEach items="${product.productOption}" var="option"
+													varStatus="status">
 													<div class="productOption">
 														<input type="text" name="productSize" placeholder="사이즈"
 															value="${option.productSize}"> <input type="text"
 															name="productInvntCnt" placeholder="재고수"
 															value="${option.productInvntCnt}">
-														<div class="productOptionAdd" onclick="addOption()">추가</div>
+														<c:if test="${status.first}">
+															<div class="productOptionAdd" onclick="addOption()">추가</div>
+														</c:if>
+														<c:if test="${!status.first}">
+															<div class="productOptionAdd deleteOption" onclick="removeOption(this)">삭제</div>
+														</c:if>
 													</div>
 												</c:forEach>
-
 											</div>
 										</div>
 										<div class="product-image-area">

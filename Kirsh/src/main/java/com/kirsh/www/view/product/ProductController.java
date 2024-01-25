@@ -2,6 +2,7 @@ package com.kirsh.www.view.product;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +19,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kirsh.www.biz.category.CategoryVO;
 import com.kirsh.www.biz.category.impl.CategoryService;
+import com.kirsh.www.biz.product.ProductOptionVO;
 import com.kirsh.www.biz.product.ProductVO;
+import com.kirsh.www.biz.product.impl.ProductDAO;
 import com.kirsh.www.biz.product.impl.ProductService;
 
 @Controller
@@ -34,7 +37,9 @@ public class ProductController {
 	private String path;
 
 	@RequestMapping(value = "/insertProduct.do")
-	public String insertProduct(ProductVO vo, @RequestParam(value="productSize", required=false) String size, @RequestParam(value="productInvntCnt", required=false) String invntCnt) throws IOException {
+	public String insertProduct(ProductVO vo, 
+			@RequestParam(value="productSize", required=false) List<String> size, 
+			@RequestParam(value="productInvntCnt", required=false) List<Integer> invntCnt) throws IOException {
 		File file = new File(path + vo.getProductModel());
 		if (!file.exists()) {
 			file.mkdirs();
@@ -53,25 +58,34 @@ public class ProductController {
 			productImage2.transferTo(new File(path + vo.getProductModel() + "\\" + fileName));
 			vo.setProductImageUrl2("images/store/" + vo.getProductModel() + "/" + fileName);
 		}
-		String[] sizeArray = size.split(",");
-		List<String> productSize = Arrays.asList(sizeArray);
-		
-		String[] cntArray = invntCnt.split(",");
-		List<String> productInvntCnt = Arrays.asList(cntArray);
-		
-		vo.setProductSize(productSize);
-		vo.setProductInvntCnt(productInvntCnt);
+
 		productService.insertProduct(vo);
-		return "getProductList.do";
+		
+		int productCode = vo.getProductCode();
+	    for (int i = 0; i < size.size(); i++) {
+	        ProductOptionVO option = new ProductOptionVO();  // ProductOptionVO 객체를 생성
+            option.setProductModel(vo.getProductModel());
+            option.setProductCode(productCode);
+	        option.setProductSize(size.get(i));
+	        option.setProductInvntCnt(invntCnt.get(i));
+			productService.insertProductOption(option);
+	    }
+		return "getProductItemList.do";
 	}
 	
 	@RequestMapping(value="/getProductInfo.do")
 	public String getProductInfo(ProductVO vo, HttpSession session, Model model) {
+
+		ProductOptionVO detail = new ProductOptionVO();
+		
+		detail.setProductCode(vo.getProductCode());
+		System.out.println("모델명 : "+vo.getProductCode());
 		ProductVO product = productService.getProduct(vo);
-		List<ProductVO> options = productService.getOption(product.getProductModel());
-		System.out.println("모델명 : " + product.getProductModel());
+		
+		List<ProductOptionVO> options = productService.getOptionList(detail);
+		product.setProductOption(options);
 		session.setAttribute("product", product);
-		model.addAttribute("options", options);
+		
 		return "productInfoAdjust.jsp";
 	}
 	

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductOptionDAO">
+	<select id="getOptionList" resultType="productOption">
+		select * from
+		productOption where productCode = #{productCode}
+	</select>
+	<insert id="insertProductOption">
+		INSERT INTO productOption(productCode, productSize, productInvntCnt,
+		productModel)
+		VALUES(#{productCode}, #{productSize},
+		${productInvntCnt},
+		#{productModel})
+	</insert>
+</mapper>

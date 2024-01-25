@@ -109,6 +109,7 @@
 		</div>
 
 	</div>
+	<script src="scripts/addProduct.js"></script>
 </body>
 
 </html>

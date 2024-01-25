@@ -22,9 +22,23 @@ public class OrderVO {
 	private String shipOrderRequest;
 	private Date buyDate;
 	private String payments;
-	
 	private List<OrderDetailVO> orderDetailVO;
 	
+	private String searchNum;
+	private String searchID;
+	
+	public String getSearchNum() {
+		return searchNum;
+	}
+	public void setSearchNum(String searchNum) {
+		this.searchNum = searchNum;
+	}
+	public String getSearchID() {
+		return searchID;
+	}
+	public void setSearchID(String searchID) {
+		this.searchID = searchID;
+	}
 	public List<OrderDetailVO> getOrderDetailVO() {
 		return orderDetailVO;
 	}

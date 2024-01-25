@@ -38,19 +38,19 @@
 						<h1 class="second-title">BEST ITEM</h1>
 					</div>
 					<ul class="item-category">
-						<li><a href="getProductList.do">
+						<li><a href="getProductList.do?productCategoryName=SWEATSHIRTS&productCategoryNum=1">
 								<div class="categoryBg"></div>
 								<div class="categoryText">
 									<p>SWEATSHIRTS</p>
 								</div> <img src="images/index/mainbanner-01.jpg" alt="여성카테고리">
 						</a></li>
-						<li><a href="getProductList.do">
+						<li><a href="getProductList.do?productCategoryName=OUTER&productCategoryNum=9">
 								<div class="categoryBg"></div>
 								<div class="categoryText">
 									<p>OUTER</p>
 								</div> <img src="images/index/mainbanner-02.jpg" alt="남성카테고리">
 						</a></li>
-						<li><a href="getProductList.do">
+						<li><a href="getProductList.do?productCategoryName=PANTS SHOES&productCategoryNum=7">
 								<div class="categoryBg"></div>
 								<div class="categoryText">
 									<p>PANTS</p>

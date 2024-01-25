@@ -39,12 +39,12 @@
 						<div class="addProduct-area-inner">
 							<div class="addProduct-right-contents">
 								<div class="product-search-area">
-									<form action="userList.do" method="post">
+									<form action="getOrderAllList.do" method="post">
 										<div class="product-search-area-inner">
-											<label for="searchName">주문번호</label> <input type="text"
-												name="searchName" placeholder="주문 번호를 입력해주세요."> <label
-												for="searchEmail">주문자</label> <input type="text"
-												name="searchEmail" placeholder="주문자 아이디를 입력해주세요."> <input
+											<label for="searchNum">주문번호</label> <input type="text"
+												name="searchNum" placeholder="주문 번호를 입력해주세요."> <label
+												for="searchID">주문자</label> <input type="text"
+												name="searchID" placeholder="주문자 아이디를 입력해주세요."> <input
 												type="submit" value="검색" class="search-btn">
 										</div>
 									</form>
@@ -69,7 +69,9 @@
 														<input type="checkbox" name="user-check"
 															value="${order.orderNum}">
 													</div>
-													<div class="email user-email orderNum"><a href="getOrderInfo.do?orderNum=${order.orderNum}">${order.orderNum}</a></div>
+													<div class="email user-email orderNum">
+														<a href="getOrderInfo.do?orderNum=${order.orderNum}">${order.orderNum}</a>
+													</div>
 													<div class="userName user-name">${order.userID}</div>
 													<div class="userNickname user-nickname">${order.payee}</div>
 													<div class="authority user-authority">
@@ -92,6 +94,7 @@
 		</div>
 
 	</div>
+	<script src="scripts/addProduct.js"></script>
 </body>
 
 </html>

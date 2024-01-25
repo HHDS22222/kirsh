@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kirsh.www.biz.product.ProductOptionVO;
 import com.kirsh.www.biz.product.ProductVO;
 
 @Service("productService")
@@ -16,6 +17,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void insertProduct(ProductVO vo) {
 		productDAO.insertProduct(vo);
+	}
+	
+	@Override
+	public void insertProductOption(ProductOptionVO vo) {
+		productDAO.insertProductOption(vo);	
 	}
 
 	@Override
@@ -49,11 +55,6 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> getOption(String vo) {
-		return productDAO.getOption(vo);
-	}
-
-	@Override
 	public List<ProductVO> getSearchProduct(ProductVO vo) {
 		// TODO Auto-generated method stub
 		return productDAO.getSearchProduct(vo);
@@ -64,6 +65,12 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return productDAO.getSearchCount(vo);
 	}
-	
+
+	@Override
+	public List<ProductOptionVO> getOptionList(ProductOptionVO vo) {
+		return productDAO.getOptionList(vo);
+	}
+
+
 	
 }

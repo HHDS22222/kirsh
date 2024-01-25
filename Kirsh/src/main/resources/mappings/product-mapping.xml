@@ -9,12 +9,6 @@
 		product
 		WHERE
 		productCode = #{productCode};
-
-
-	</select>
-	<select id="getProductOption" resultType="product">
-		select productInvntCnt,
-		productSize from productOption where productModel = #{productModel}
 	</select>
 
 	<select id="getProductSize" resultType="product">
@@ -63,6 +57,9 @@
 	</select>
 
 	<insert id="insertProduct">
+		<selectKey resultType="int" keyProperty="productCode"
+			order="AFTER">SELECT LAST_INSERT_ID() AS productCode;
+		</selectKey>
 		INSERT INTO product(productCategoryNum, productName,
 		productEngName,
 		productModel, productRPrice, productPrice,
@@ -74,13 +71,6 @@
 		#{productPrice}, #{productInfo},
 		#{productImageUrl1},
 		#{productImageUrl2});
-		<foreach collection="productSize" item="size" index="index"
-			separator=";">
-			INSERT INTO productOption(productSize, productInvntCnt,
-			productModel)
-			VALUES(#{size}, ${productInvntCnt[index]},
-			#{productModel})
-		</foreach>
 	</insert>
 
 	<resultMap type="com.kirsh.www.biz.product.ProductVO"

@@ -11,6 +11,7 @@
 		<typeAlias type="com.kirsh.www.biz.cart.CartVO" alias="cart"/>
 		<typeAlias type="com.kirsh.www.biz.order.OrderVO" alias="order"/>
 		<typeAlias type="com.kirsh.www.biz.orderDetail.OrderDetailVO" alias="orderDetail"/>
+		<typeAlias type="com.kirsh.www.biz.product.ProductOptionVO" alias="productOption"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappings/user-mapping.xml" />
@@ -19,5 +20,6 @@
 		<mapper resource="mappings/cart-mapping.xml"/>
 		<mapper resource="mappings/order-mapping.xml"/>
 		<mapper resource="mappings/orderDetail-mapping.xml"/>
+		<mapper resource="mappings/productOption-mapping.xml"/>
 	</mappers>
 </configuration>

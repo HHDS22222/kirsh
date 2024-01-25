@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kirsh.www.biz.product.ProductOptionVO;
 import com.kirsh.www.biz.product.ProductVO;
 
 @Repository
@@ -16,6 +17,10 @@ public class ProductDAO {
 
 	public void insertProduct(ProductVO vo) {
 		mybatis.insert("ProductDAO.insertProduct", vo);
+	}
+	
+	public void insertProductOption(ProductOptionVO vo) {
+		mybatis.insert("ProductOptionDAO.insertProductOption", vo);
 	}
 
 	public List<ProductVO> getProductList(ProductVO vo) {
@@ -42,15 +47,16 @@ public class ProductDAO {
 		return mybatis.selectList("ProductDAO.getProductItemList", vo);
 	}
 
-	public List<ProductVO> getOption(String vo) {
-		return mybatis.selectList("ProductDAO.getProductOption", vo);
-	}
-
 	public List<ProductVO> getSearchProduct(ProductVO vo) {
 		return mybatis.selectList("ProductDAO.searchProduct", vo);
 	}
 	
 	public ProductVO getSearchCount(ProductVO vo) {
 		return mybatis.selectOne("ProductDAO.searchCount", vo);
+	}
+
+	public List<ProductOptionVO> getOptionList(ProductOptionVO vo) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("ProductOptionDAO.getOptionList", vo);
 	}
 }

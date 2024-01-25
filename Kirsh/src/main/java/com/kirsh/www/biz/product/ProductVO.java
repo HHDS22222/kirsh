@@ -20,8 +20,7 @@ public class ProductVO {
 	private Date productRegDate;
 	private String productInfo;
 	
-    private List<String> productSize;
-    private List<String> productInvntCnt;
+    private List<ProductOptionVO> productOption;
     
 	private String searchName;
 	private String searchCode;
@@ -156,28 +155,20 @@ public class ProductVO {
 		this.productImageUrl2 = productImageUrl2;
 	}
 
-	public List<String> getProductSize() {
-		return productSize;
-	}
-
-	public void setProductSize(List<String> productSize) {
-		this.productSize = productSize;
-	}
-
-	public List<String> getProductInvntCnt() {
-		return productInvntCnt;
-	}
-
-	public void setProductInvntCnt(List<String> productInvntCnt) {
-		this.productInvntCnt = productInvntCnt;
-	}
-
 	public int getSearchCnt() {
 		return searchCnt;
 	}
 
 	public void setSearchCnt(int searchCnt) {
 		this.searchCnt = searchCnt;
+	}
+
+	public List<ProductOptionVO> getProductOption() {
+		return productOption;
+	}
+
+	public void setProductOption(List<ProductOptionVO> productOption) {
+		this.productOption = productOption;
 	}
 	
 }
