@@ -11,7 +11,7 @@ $(function () {
             $(".main-contents-text").fadeOut("fast");
         },
         "click": function () {
-            location.href = 'influencer.html';
+            location.href = 'influencer.jsp';
         }
     })
 

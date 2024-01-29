@@ -23,5 +23,8 @@
 		DELETE FROM user WHERE
 		userID = #{userID}
 	</delete>
-
+	
+	<select id="getOrderCnt" resultType="int">
+		select count(*) from kirsh.order where userID = #{userID};
+	</select>
 </mapper>	

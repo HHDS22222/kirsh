@@ -23,10 +23,10 @@ public class OrderVO {
 	private Date buyDate;
 	private String payments;
 	private List<OrderDetailVO> orderDetailVO;
-	
+
 	private String searchNum;
 	private String searchID;
-	
+
 	public String getSearchNum() {
 		return searchNum;
 	}

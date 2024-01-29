@@ -49,7 +49,8 @@
 												<img src="${product.productImageUrl1}" alt="상품이미지1">
 											</div>
 											<div class="item-name">${product.productName}</div>
-											<div class="item-price">${product.productPrice}원</div>
+											<div class="item-price">
+												<span>${product.productPrice}</span>원</div>
 										</a>
 									</div>
 								</c:forEach>
@@ -58,11 +59,12 @@
 					</div>
 				</div>
 			</section>
+<!-- 		추후 추가..	
 			<section id="page-area">
 				<div class="paging">
 					<a href="#" class="onPage">1</a> <a href="#">2</a>
 				</div>
-			</section>
+			</section> -->
 		</div>
 		<%@ include file="footer.jsp"%>
 		<div class="gnbbg"></div>

@@ -34,4 +34,9 @@ public class UserDAO {
 		// TODO Auto-generated method stub
 		return mybatis.selectOne("UserDAO.getUserInfo", userID);
 	}
+
+	public int getOrderCnt(String userID) {
+		// TODO Auto-generated method stub
+		return mybatis.selectOne("UserDAO.getOrderCnt", userID);
+	}
 }

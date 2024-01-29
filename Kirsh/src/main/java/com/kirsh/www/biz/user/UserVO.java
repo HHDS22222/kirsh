@@ -25,6 +25,22 @@ public class UserVO {
 	private String searchName;
 	private String searchEmail;
 	
+	private int orderCnt;
+	private int allOrderCnt;
+	
+	public int getOrderCnt() {
+		return orderCnt;
+	}
+	public void setOrderCnt(int orderCnt) {
+		this.orderCnt = orderCnt;
+	}
+	public int getAllOrderCnt() {
+		return allOrderCnt;
+	}
+	public void setAllOrderCnt(int allOrderCnt) {
+		this.allOrderCnt = allOrderCnt;
+	}
+	
 	public String getSearchName() {
 		return searchName;
 	}

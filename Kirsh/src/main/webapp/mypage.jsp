@@ -48,13 +48,13 @@
 								<div class="user-info-list">
 									<p>주문내역</p>
 									<h3>
-										<span>1</span>건
+										<span>${user.orderCnt}</span>건
 									</h3>
 								</div>
 								<div class="user-info-list">
 									<p>쿠폰</p>
 									<h3>
-										<span>2</span>개
+										<span>0</span>개
 									</h3>
 								</div>
 								<div class="user-info-list">

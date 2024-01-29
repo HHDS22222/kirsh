@@ -26,7 +26,7 @@ public class UserController {
 	public String register(UserVO vo) {
 		System.out.println("회원가입 처리");
 		userService.insertUser(vo);
-		return "redirect:index.jsp";
+		return "redirect:login.jsp";
 	}
 
 	// 로그인
@@ -83,6 +83,9 @@ public class UserController {
 	public String myPage(UserVO vo, HttpSession session, Model model) {
 		String userID = session.getAttribute("userID").toString();
 		UserVO user = userService.getUserInfo(userID);
+		int cnt = userService.getOrderCnt(userID);
+		System.out.println(cnt);
+		user.setOrderCnt(cnt);
 		model.addAttribute("user", user);
 		return "mypage.jsp";
 	}

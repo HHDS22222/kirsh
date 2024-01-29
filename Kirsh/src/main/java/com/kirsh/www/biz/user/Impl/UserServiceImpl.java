@@ -41,4 +41,10 @@ public class UserServiceImpl implements UserService {
 		return userDAO.getUserInfo(userID);
 	}
 
+	@Override
+	public int getOrderCnt(String userID) {
+		// TODO Auto-generated method stub
+		return userDAO.getOrderCnt(userID);
+	}
+
 }

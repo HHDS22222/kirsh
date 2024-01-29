@@ -10,4 +10,5 @@ public interface UserService {
 	public List<UserVO> getUserList(UserVO vo);
 	public void deleteUser(String user);
 	public UserVO getUserInfo(String userID);
+	public int getOrderCnt(String userID);
 }

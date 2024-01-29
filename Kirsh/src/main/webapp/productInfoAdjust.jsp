@@ -108,7 +108,7 @@
 									</div>
 								</div>
 								<div class="btn-area">
-									<input type="submit" class="product-add-btn" value="등록하기"></input>
+									<input type="submit" class="product-add-btn" value="수정하기"></input>
 								</div>
 							</form>
 						</div>

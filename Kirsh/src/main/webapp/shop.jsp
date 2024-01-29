@@ -51,13 +51,14 @@
 					</div>
 				</div>
 			</section>
+<!-- 		추후 추가..
 			<section id="page-area">
 				<div class="paging">
 					<a href="#" class="onPage">1</a> 
 					<a href="#">2</a> 
 					<a href="#">3</a>
 				</div>
-			</section>
+			</section> -->
 		</div>
 
 	</div>

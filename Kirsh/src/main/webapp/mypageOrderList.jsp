@@ -22,7 +22,7 @@
 			<div class="inner">
 				<h1 class="mypage-title">주문 내역 조회</h1>
 				<div class="right-path">
-					<p>home > 마이페이지</p>
+					<p>마이페이지 > 주문내역조회</p>
 				</div>
 				<div class="mypage-area">
 					<div class="mypage-area-inner">

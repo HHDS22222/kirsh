@@ -7,4 +7,12 @@ $(function(){
         
         return true;
     });
+    $(".item-price>span").each(function () {
+        var productPrice = $(this).text();
+        $(this).text(priceToString(productPrice));
+    });
 });
+
+    function priceToString(price) {
+        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }

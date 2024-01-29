@@ -29,7 +29,7 @@ $(function () {
 
     // 스토어 메인 배너
     $(document).ready(function () {
-        let url = "images/store/store-banner.jpg"
+        let url = "images/store/store-banner2.jpg"
         $(".main-banner").html(`<img src=${url}>`);
     })
     
