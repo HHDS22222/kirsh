@@ -21,6 +21,8 @@ Kirsh를 리디자인하여 재구성한 쇼핑몰 사이트입니다.
 ## 🎮시연 영상
 https://youtu.be/LrZYqFgweNI
 
-## 📚notion
+## 📒notion
 https://www.notion.so/f83f24d3fc0742109aa202f7398ec03d?v=3b6d456a824648788423a1f45ebaeb43&pvs=4
 
+## 📚blog
+https://cutiiiemong.tistory.com/
