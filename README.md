@@ -56,5 +56,3 @@ https://youtu.be/LrZYqFgweNI
 ## 📒notion
 https://www.notion.so/f83f24d3fc0742109aa202f7398ec03d?v=3b6d456a824648788423a1f45ebaeb43&pvs=4
 
-## 📚blog
-https://cutiiiemong.tistory.com/
